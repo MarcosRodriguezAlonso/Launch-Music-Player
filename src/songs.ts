@@ -4,10 +4,7 @@ export const areSameSong = (song: Song, songTitle: string): boolean => {
   let areSame: boolean;
   // Asígnale a la variable areSame un true o un false dependiendo de si
   // el título de la canción recibida coincide con el título recibido
-
-  areSame = true; // Cambia esta línea por tu código
-
-  return areSame;
+  return song.title === songTitle;
 };
 
 export const addSong = (song: Song, songs: Song[]): void => {

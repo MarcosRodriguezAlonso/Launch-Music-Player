@@ -54,6 +54,7 @@ export const removeSongByPosition = (songs: Song[], position: number): void => {
 
 export const setCurrentSong = (song: Song): void => {
   // Establece la canción recibida como canción actual
+  let currentSong = song;
 };
 
 export const getNextSongPosition = (

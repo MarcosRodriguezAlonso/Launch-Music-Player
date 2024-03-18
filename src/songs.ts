@@ -2,7 +2,6 @@ import { errorMonitor } from "events";
 import { Song } from "./songsData";
 
 export const areSameSong = (song: Song, songTitle: string): boolean => {
-  let areSame: boolean;
   // Asígnale a la variable areSame un true o un false dependiendo de si
   // el título de la canción recibida coincide con el título recibido
   return song.title === songTitle;
@@ -14,7 +13,6 @@ export const addSong = (song: Song, songs: Song[]): void => {
 };
 
 export const isPlaylistFull = (songs: Song[]): boolean => {
-  let isFull: boolean;
   // Asígnale a la variable isFull un true o un false dependiendo de si
   // el array de títulos recibido tiene 4 o más elementos
   return songs.length >= 4;
@@ -45,12 +43,8 @@ export const getErrorMessage = (errorCode: string): string => {
 };
 
 export const getSongsCount = (songs: Song[]): number => {
-  let songsCount: number;
   // Asígnale a la variable songsCount el número de canciones recibidas
-
-  songsCount = 0; // Cambia esta línea por tu código
-
-  return songsCount;
+  return songs.length;
 };
 
 export const removeSongByPosition = (songs: Song[], position: number): void => {

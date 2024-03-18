@@ -1,3 +1,4 @@
+import { errorMonitor } from "events";
 import { Song } from "./songsData";
 
 export const areSameSong = (song: Song, songTitle: string): boolean => {
@@ -16,10 +17,7 @@ export const isPlaylistFull = (songs: Song[]): boolean => {
   let isFull: boolean;
   // Asígnale a la variable isFull un true o un false dependiendo de si
   // el array de títulos recibido tiene 4 o más elementos
-
-  isFull = false; // Cambia esta línea por tu código
-
-  return isFull;
+  return songs.length >= 4;
 };
 
 export const getErrorMessage = (errorCode: string): string => {
@@ -30,9 +28,18 @@ export const getErrorMessage = (errorCode: string): string => {
   // Si el código de error no es válido, asígnale un mensaje genérico
   // Éstos son los códigos de error y sus mensajes correspondientes:
   // - "exists": "La canción ya existe"
-  // - "limit": "La playlist está llena"
+  // - "limit": "La playlist está llena
 
-  errorMessage = ""; // Cambia esta línea por tu código
+  switch (errorCode) {
+    case "exists":
+      errorMessage = "La canción ya existe";
+      break;
+    case "limit":
+      errorMessage = "La playlist está llena";
+      break;
+    default:
+      errorMessage = "Error, algo no ha ido bien";
+  }
 
   return errorMessage;
 };
